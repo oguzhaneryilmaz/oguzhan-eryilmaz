@@ -14,3 +14,18 @@ const getResult = (cityName) => {
         })
         .then(displayResult)
 }
+
+
+const displayResult = (result) => {
+    console.log(result)
+
+    let city = document.querySelector('.city')
+    city.innerText = `${result.name},${result.sys.country}`
+
+    let temp = document.querySelector('.temp')
+    temp.innerText = `${Math.round(result.main.temp)}°C`
+
+    let humidity = document.querySelector('.humidity')
+    humidity.innerText = `Nem : ${result.main.humidity}%`
+
+}
